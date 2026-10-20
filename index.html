@@ -1455,7 +1455,10 @@
       100% { transform: translateY(-4px); }
     }
 
-    .figure {
+    /* ==========================================================================
+       TWO PRETTIEST WHITE BUNNIES BEHIND CAKE (SAMEERA & RAHUL)
+       ========================================================================== */
+    .bunny-figure {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1464,157 +1467,276 @@
     }
 
     .name-pill {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
+      font-weight: 600;
       color: var(--champagne-gold);
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2px 8px;
-      border-radius: 10px;
-      border: 1px solid rgba(244, 208, 111, 0.4);
-      margin-top: 4px;
+      background: rgba(26, 8, 20, 0.85);
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(244, 208, 111, 0.5);
+      margin-top: 5px;
       letter-spacing: 0.5px;
       white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
-    .char-head {
+    /* Fluffy Bunny Ears */
+    .bunny-ears {
+      display: flex;
+      gap: 12px;
+      margin-bottom: -10px;
+      z-index: 1;
       position: relative;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #fcd5b5;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .bunny-ear {
+      width: 18px;
+      height: 52px;
+      background: #ffffff;
+      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 -2px 6px rgba(0,0,0,0.05);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: bottom center;
+      transition: transform 0.3s ease;
+    }
+
+    /* Inner Soft Pink Ear Gradient */
+    .bunny-ear::after {
+      content: '';
+      position: absolute;
+      width: 9px;
+      height: 38px;
+      background: linear-gradient(to bottom, #ffb3c6, #ffd1dc);
+      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    }
+
+    .rahul-bunny .bunny-ear.left {
+      transform: rotate(-14deg);
+    }
+    .rahul-bunny .bunny-ear.right {
+      transform: rotate(6deg);
+    }
+
+    .sameera-bunny .bunny-ear.left {
+      transform: rotate(-6deg);
+    }
+    .sameera-bunny .bunny-ear.right {
+      transform: rotate(12deg);
+    }
+
+    /* Fluffy White Bunny Head */
+    .bunny-head {
+      position: relative;
+      width: 68px;
+      height: 62px;
+      border-radius: 50% 50% 46% 46% / 54% 54% 46% 46%;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22), 0 0 16px rgba(255, 255, 255, 0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      z-index: 3;
     }
 
-    /* Rahul Styling */
-    .rahul-hair {
+    /* Sameera Birthday Tiara & Flower */
+    .bunny-crown {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.85));
+      z-index: 6;
+      animation: crownSparkle 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes crownSparkle {
+      0% { transform: translateX(-50%) rotate(-6deg); }
+      100% { transform: translateX(-50%) rotate(6deg); }
+    }
+
+    .bunny-flower-bow {
       position: absolute;
       top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 64px;
-      height: 32px;
-      background: #2b1810;
-      border-radius: 30px 30px 6px 6px;
-      z-index: 2;
+      right: -8px;
+      font-size: 1.15rem;
+      z-index: 6;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
-    /* Sameera Styling */
-    .sameera-hair {
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 68px;
-      height: 70px;
-      background: #211210;
-      border-radius: 34px 34px 20px 20px;
-      z-index: 1;
-    }
-
-    .sameera-crown {
-      position: absolute;
-      top: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.4rem;
-      filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.6));
-      z-index: 5;
-      animation: crownShine 2s infinite alternate;
-    }
-
-    @keyframes crownShine {
-      0% { transform: translateX(-50%) rotate(-4deg); }
-      100% { transform: translateX(-50%) rotate(4deg); }
-    }
-
-    .char-eyes {
+    /* Big Sparkling Bunny Eyes */
+    .bunny-eyes {
       display: flex;
-      gap: 16px;
-      margin-top: 8px;
-      z-index: 3;
+      gap: 18px;
+      margin-top: 6px;
+      z-index: 4;
     }
 
-    .char-eye {
-      width: 5px;
-      height: 5px;
-      background: #1a0814;
+    .bunny-eye {
+      width: 7px;
+      height: 10px;
+      background: #2b111e;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    /* Sparkle Reflection in Eyes */
+    .bunny-eye::before {
+      content: '';
+      position: absolute;
+      top: 1.5px;
+      left: 1.5px;
+      width: 3px;
+      height: 3px;
+      background: #ffffff;
       border-radius: 50%;
     }
 
-    .char-cheeks {
-      display: flex;
-      gap: 24px;
+    .bunny-eye::after {
+      content: '';
       position: absolute;
-      top: 32px;
-      z-index: 3;
+      bottom: 1.5px;
+      right: 1.5px;
+      width: 1.5px;
+      height: 1.5px;
+      background: #ffffff;
+      border-radius: 50%;
     }
 
-    .blush {
-      width: 9px;
-      height: 6px;
+    /* Eyelashes for Sameera Bunny */
+    .sameera-bunny .bunny-eye.left::before {
+      box-shadow: -2px -2px 0 0.5px #2b111e;
+    }
+    .sameera-bunny .bunny-eye.right::before {
+      box-shadow: 2px -2px 0 0.5px #2b111e;
+    }
+
+    /* Rosy Blushing Cheeks */
+    .bunny-cheeks {
+      display: flex;
+      gap: 28px;
+      position: absolute;
+      top: 34px;
+      z-index: 4;
+    }
+
+    .bunny-blush {
+      width: 11px;
+      height: 7px;
       background: #ff758f;
-      opacity: 0.65;
+      opacity: 0.75;
       border-radius: 50%;
+      filter: blur(0.5px);
     }
 
-    .char-mouth {
-      width: 10px;
-      height: 5px;
-      border-bottom: 2px solid #b54158;
-      border-radius: 0 0 10px 10px;
-      margin-top: 4px;
-      z-index: 3;
+    /* Tiny Pink Heart Nose & Mouth */
+    .bunny-snout {
+      position: absolute;
+      top: 31px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+    }
+
+    .bunny-nose {
+      width: 6px;
+      height: 4.5px;
+      background: #ff758f;
+      border-radius: 40% 40% 50% 50%;
+    }
+
+    .bunny-mouth {
+      width: 8px;
+      height: 4px;
+      border-bottom: 1.5px solid #ff758f;
+      border-radius: 0 0 50% 50%;
+      margin-top: 1px;
       transition: all 0.25s ease;
     }
 
-    .sameera.blowing .char-mouth {
-      width: 8px;
-      height: 8px;
-      border: 2px solid #b54158;
+    /* Cheeks and mouth when blowing */
+    .sameera-bunny.blowing .bunny-mouth {
+      width: 7px;
+      height: 7px;
+      border: 2px solid #ff758f;
       border-radius: 50%;
-      background: #ff758f;
-      margin-top: 3px;
+      background: #ffccd5;
+      margin-top: 2px;
     }
 
-    .rahul.blowing .char-mouth {
-      width: 8px;
-      height: 8px;
-      border: 2px solid #6b3e2e;
+    .rahul-bunny.blowing .bunny-mouth {
+      width: 7px;
+      height: 7px;
+      border: 2px solid #ff758f;
       border-radius: 50%;
-      margin-top: 3px;
+      background: #ffccd5;
+      margin-top: 2px;
     }
 
-    .char-body {
-      width: 66px;
-      height: 42px;
-      border-radius: 20px 20px 6px 6px;
-      margin-top: -6px;
+    /* Fluffy White Bunny Body */
+    .bunny-body {
+      width: 72px;
+      height: 46px;
+      border-radius: 22px 22px 10px 10px;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      margin-top: -8px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
+      z-index: 2;
     }
 
-    .rahul .char-body {
-      background: linear-gradient(135deg, #1c2541, #3a506b);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    .bunny-bowtie {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      z-index: 4;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
 
-    .sameera .char-body {
-      background: linear-gradient(135deg, #ff758f, #e05780);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    .bunny-necklace {
+      font-size: 1rem;
+      margin-top: 2px;
+      z-index: 4;
+    }
+
+    /* Paws resting forward */
+    .bunny-paws {
+      display: flex;
+      gap: 22px;
+      position: absolute;
+      bottom: 2px;
+      z-index: 5;
+    }
+
+    .bunny-paw {
+      width: 14px;
+      height: 10px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      border-top: 1px solid #ffeef2;
     }
 
     /* Leaning forward when blowing */
-    .figure.sameera.blowing {
-      transform: rotate(-10deg) translateY(14px) scale(1.05);
+    .sameera-bunny.blowing {
+      transform: rotate(-12deg) translateY(14px) scale(1.06);
+    }
+    .sameera-bunny.blowing .bunny-ear {
+      transform: rotate(-18deg) scaleY(0.9);
     }
 
-    .figure.rahul.blowing {
-      transform: rotate(8deg) translateY(8px);
+    .rahul-bunny.blowing {
+      transform: rotate(10deg) translateY(8px) scale(1.04);
+    }
+    .rahul-bunny.blowing .bunny-ear {
+      transform: rotate(18deg) scaleY(0.9);
     }
 
     .floating-couple-heart {
@@ -1659,13 +1781,18 @@
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
     }
 
-    .couple-figures.celebrating .figure {
-      animation: coupleJump 0.6s infinite alternate ease-in-out;
+    /* Celebrating Hop Animation */
+    .couple-figures.celebrating .bunny-figure {
+      animation: bunnyJoyHop 0.55s infinite alternate cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    @keyframes coupleJump {
+    @keyframes bunnyJoyHop {
       0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-16px) scale(1.08); }
+      100% { transform: translateY(-22px) scale(1.1) rotate(4deg); }
+    }
+
+    .couple-figures.celebrating .rahul-bunny {
+      animation-delay: 0.12s;
     }
 
     /* ==========================================================================
@@ -2540,48 +2667,73 @@
       <div class="couple-behind-cake" id="coupleBehindCake">
         <!-- Floating Speech Bubble for Live Commentary -->
         <div class="couple-speech-bubble" id="coupleSpeech">
-          <span>"Sameera, pehle dil mein wish maango phir phoonk maaro! 🎂"</span>
+          <span>"Sameera Bunny, pehle dil mein wish maango phir phoonk maaro! 🐰🎂"</span>
         </div>
 
         <div class="couple-figures" id="coupleFigures">
-          <!-- Rahul (Boyfriend) -->
-          <div class="figure rahul" id="figureRahul">
-            <div class="char-head">
-              <div class="rahul-hair"></div>
-              <div class="char-eyes">
-                <span class="char-eye"></span>
-                <span class="char-eye"></span>
-              </div>
-              <div class="char-cheeks">
-                <span class="blush"></span>
-                <span class="blush"></span>
-              </div>
-              <div class="char-mouth"></div>
+          <!-- Rahul Bunny (White Dapper Bunny) -->
+          <div class="bunny-figure rahul-bunny" id="figureRahul">
+            <div class="bunny-ears">
+              <div class="bunny-ear left"></div>
+              <div class="bunny-ear right"></div>
             </div>
-            <div class="char-body"></div>
-            <div class="name-pill">Rahul 👑</div>
+            <div class="bunny-head">
+              <div class="bunny-eyes">
+                <span class="bunny-eye left"></span>
+                <span class="bunny-eye right"></span>
+              </div>
+              <div class="bunny-cheeks">
+                <span class="bunny-blush"></span>
+                <span class="bunny-blush"></span>
+              </div>
+              <div class="bunny-snout">
+                <div class="bunny-nose"></div>
+                <div class="bunny-mouth"></div>
+              </div>
+            </div>
+            <div class="bunny-body">
+              <div class="bunny-bowtie">🎀</div>
+              <div class="bunny-paws">
+                <span class="bunny-paw"></span>
+                <span class="bunny-paw"></span>
+              </div>
+            </div>
+            <div class="name-pill">Rahul Bunny 🐰</div>
           </div>
 
           <!-- Floating Love Heart -->
           <div class="floating-couple-heart">💖</div>
 
-          <!-- Sameera (Birthday Girl) -->
-          <div class="figure sameera" id="figureSameera">
-            <div class="sameera-crown">👑</div>
-            <div class="char-head">
-              <div class="sameera-hair"></div>
-              <div class="char-eyes">
-                <span class="char-eye"></span>
-                <span class="char-eye"></span>
-              </div>
-              <div class="char-cheeks">
-                <span class="blush"></span>
-                <span class="blush"></span>
-              </div>
-              <div class="char-mouth"></div>
+          <!-- Sameera Bunny (White Princess Bunny) -->
+          <div class="bunny-figure sameera-bunny" id="figureSameera">
+            <div class="bunny-crown">👑</div>
+            <div class="bunny-ears">
+              <div class="bunny-ear left"></div>
+              <div class="bunny-ear right"></div>
             </div>
-            <div class="char-body"></div>
-            <div class="name-pill">Sameera 💖</div>
+            <div class="bunny-flower-bow">🌸</div>
+            <div class="bunny-head">
+              <div class="bunny-eyes">
+                <span class="bunny-eye left"></span>
+                <span class="bunny-eye right"></span>
+              </div>
+              <div class="bunny-cheeks">
+                <span class="bunny-blush"></span>
+                <span class="bunny-blush"></span>
+              </div>
+              <div class="bunny-snout">
+                <div class="bunny-nose"></div>
+                <div class="bunny-mouth"></div>
+              </div>
+            </div>
+            <div class="bunny-body">
+              <div class="bunny-necklace">✨</div>
+              <div class="bunny-paws">
+                <span class="bunny-paw"></span>
+                <span class="bunny-paw"></span>
+              </div>
+            </div>
+            <div class="name-pill">Sameera Bunny 💖</div>
           </div>
         </div>
 
@@ -2654,7 +2806,7 @@
       <div class="bouquet-glow"></div>
 
       <div class="bouquet-ribbon-tag">
-        <span>💌 "With All My Love, Rahul"</span>
+        <span>💌 "Rahul Bunny 🐰 Se Meri Sabse Pyaari Sameera Bunny 💖 Ke Liye"</span>
       </div>
 
       <!-- 3D Interactive Bouquet -->
@@ -3427,7 +3579,7 @@ Rahul ❤️`
         triggerConfetti(window.innerWidth / 2, window.innerHeight * 0.65, 15);
 
         if (coupleSpeech) {
-          coupleSpeech.innerHTML = `<span>"Arey Sameera! Mombattiyan thodi ziddi hain, bujhi nahi! 😂 Zor se phoonko!"</span>`;
+          coupleSpeech.innerHTML = `<span>"Arey Sameera! Mombattiyan thodi ziddi hain! 😂 Ek baar aur zor se phoonko! 🐰💨"</span>`;
         }
 
         blowCandlesBtn.innerHTML = `<span>🌬️ Ek Baar Aur Zor Se Phoonko! (Attempt 2/3)</span>`;
@@ -3457,7 +3609,7 @@ Rahul ❤️`
         triggerConfetti(window.innerWidth / 2, window.innerHeight * 0.65, 25);
 
         if (coupleSpeech) {
-          coupleSpeech.innerHTML = `<span>"Wah! 2 bujh gayi, bas 3 bachi hain! Ab poori taqat se aakhiri baar! ❤️"</span>`;
+          coupleSpeech.innerHTML = `<span>"Wah! 2 bujh gayi, bas 3 bachi hain! Ab dono bunnies saath mein aakhiri baar phoonko! 🐰❤️"</span>`;
         }
 
         blowCandlesBtn.innerHTML = `<span>🔥 Aakhiri Baar Poori Taqat Se Phoonko! (Attempt 3/3)</span>`;
@@ -3479,7 +3631,7 @@ Rahul ❤️`
         if (coupleFigures) coupleFigures.classList.add("celebrating");
 
         if (coupleSpeech) {
-          coupleSpeech.innerHTML = `<span>"HURRAY! 🎉 Tumhari Wish Poori Ho Gayi Meri Jaan! I Love You! ❤️"</span>`;
+          coupleSpeech.innerHTML = `<span>"HURRAY! 🎉 Tumhari Wish Poori Ho Gayi Meri Pyaari Bunny! I Love You! 🐰💖"</span>`;
         }
 
         blowCandlesBtn.style.opacity = "0.7";
